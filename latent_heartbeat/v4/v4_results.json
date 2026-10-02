@@ -1,0 +1,798 @@
+{
+ "version": 4,
+ "design": "past obs -> state -> future obs; R2(h) decay; controls incl. shuffled & time-shifted factor",
+ "panels": [
+  "log-mid returns",
+  "spread-bps changes",
+  "imb5 changes",
+  "trade-flow imbalance"
+ ],
+ "coverage": {
+  "rows_1s": 288254,
+  "span_from": "2026-09-29T13:32:52+00:00",
+  "span_to": "2026-10-02T22:56:45+00:00"
+ },
+ "bar_coverage": {
+  "ret": {
+   "bars": 9650,
+   "nan_frac": 0.002
+  },
+  "spr": {
+   "bars": 9650,
+   "nan_frac": 0.002
+  },
+  "imb": {
+   "bars": 9650,
+   "nan_frac": 0.002
+  },
+  "tfi": {
+   "bars": 9650,
+   "nan_frac": 0.7022
+  },
+  "n_bars": 9650,
+  "bar_span_from": "2026-09-29T13:32:30+00:00",
+  "bar_span_to": "2026-10-02T22:56:30+00:00"
+ },
+ "split": {
+  "train_bars": 6933,
+  "test_bars": 2717,
+  "train_end_utc": "2026-10-02T00:00:00+00:00"
+ },
+ "scree": {
+  "ret": {
+   "complete_train_rows": 6873,
+   "var_explained": [
+    0.3243,
+    0.1565,
+    0.1362,
+    0.1176,
+    0.1019,
+    0.0999,
+    0.0636
+   ],
+   "k_chosen": 2,
+   "rule": "factors above 1/P white-noise baseline, train only"
+  },
+  "spr": {
+   "complete_train_rows": 6873,
+   "var_explained": [
+    0.2482,
+    0.1985,
+    0.1705,
+    0.1407,
+    0.1265,
+    0.0846,
+    0.031
+   ],
+   "k_chosen": 3,
+   "rule": "factors above 1/P white-noise baseline, train only"
+  },
+  "imb": {
+   "complete_train_rows": 6873,
+   "var_explained": [
+    0.1571,
+    0.1509,
+    0.1454,
+    0.144,
+    0.141,
+    0.1352,
+    0.1264
+   ],
+   "k_chosen": 4,
+   "rule": "factors above 1/P white-noise baseline, train only"
+  },
+  "tfi": {
+   "complete_train_rows": 3,
+   "note": "too sparse for PCA; panel analyzed via pairwise correlations only"
+  }
+ },
+ "k_choice": {
+  "ret": 2,
+  "spr": 3,
+  "imb": 4,
+  "tfi": 0
+ },
+ "loo_loadings_ret": {
+  "AMP-USD": [
+   [
+    -0.5633,
+    -0.0308
+   ],
+   [
+    -0.4411,
+    -0.0236
+   ],
+   [
+    -0.4362,
+    0.0158
+   ],
+   [
+    0.0159,
+    -0.2453
+   ],
+   [
+    -0.545,
+    -0.0122
+   ],
+   [
+    -0.0244,
+    0.9685
+   ]
+  ],
+  "XPL-USD": [
+   [
+    0.0605,
+    -0.0055
+   ],
+   [
+    0.5574,
+    -0.0491
+   ],
+   [
+    0.5553,
+    -0.0106
+   ],
+   [
+    -0.0302,
+    -0.2416
+   ],
+   [
+    0.6119,
+    -0.0289
+   ],
+   [
+    0.0455,
+    0.9686
+   ]
+  ],
+  "KITE-USD": [
+   [
+    0.0558,
+    0.004
+   ],
+   [
+    0.6174,
+    0.0382
+   ],
+   [
+    0.5052,
+    -0.0037
+   ],
+   [
+    -0.0287,
+    0.2401
+   ],
+   [
+    0.5991,
+    0.0197
+   ],
+   [
+    0.0277,
+    -0.9698
+   ]
+  ],
+  "2Z-USD": [
+   [
+    0.0456,
+    -0.0026
+   ],
+   [
+    0.6184,
+    -0.0255
+   ],
+   [
+    0.5092,
+    -0.0151
+   ],
+   [
+    -0.0022,
+    -0.2413
+   ],
+   [
+    0.5961,
+    -0.0074
+   ],
+   [
+    0.0283,
+    0.97
+   ]
+  ],
+  "MOG-USD": [
+   [
+    -0.0477,
+    -0.0104
+   ],
+   [
+    -0.5608,
+    0.0312
+   ],
+   [
+    -0.4398,
+    0.0029
+   ],
+   [
+    -0.4381,
+    0.0181
+   ],
+   [
+    -0.5449,
+    0.0098
+   ],
+   [
+    -0.0316,
+    -0.9992
+   ]
+  ],
+  "VET-USD": [
+   [
+    -0.0569,
+    0.0033
+   ],
+   [
+    -0.6292,
+    0.0372
+   ],
+   [
+    -0.5526,
+    0.0335
+   ],
+   [
+    -0.5421,
+    -0.0065
+   ],
+   [
+    0.022,
+    0.2448
+   ],
+   [
+    -0.0343,
+    -0.9682
+   ]
+  ],
+  "XYO-USD": [
+   [
+    -0.0456,
+    -0.0056
+   ],
+   [
+    -0.5626,
+    0.0153
+   ],
+   [
+    -0.44,
+    0.0964
+   ],
+   [
+    -0.4366,
+    -0.0759
+   ],
+   [
+    0.0194,
+    0.9923
+   ],
+   [
+    -0.5447,
+    0.0029
+   ]
+  ]
+ },
+ "full_panel_factors": {
+  "ret": {
+   "var_explained": [
+    0.3243,
+    0.1565
+   ],
+   "loadings": [
+    [
+     0.0462,
+     -0.0024
+    ],
+    [
+     0.5626,
+     -0.0307
+    ],
+    [
+     0.4402,
+     -0.0234
+    ],
+    [
+     0.4362,
+     0.0158
+    ],
+    [
+     -0.0154,
+     -0.2455
+    ],
+    [
+     0.5444,
+     -0.0122
+    ],
+    [
+     0.0244,
+     0.9684
+    ]
+   ],
+   "complete_train_rows": 6873
+  },
+  "spr": {
+   "var_explained": [
+    0.2482,
+    0.1985,
+    0.1705
+   ],
+   "loadings": [
+    [
+     -0.0376,
+     -0.0041,
+     -0.0074
+    ],
+    [
+     -0.089,
+     0.2495,
+     0.1108
+    ],
+    [
+     -0.186,
+     0.6918,
+     -0.672
+    ],
+    [
+     -0.3172,
+     0.4992,
+     0.7087
+    ],
+    [
+     -0.556,
+     -0.2376,
+     -0.1012
+    ],
+    [
+     -0.0695,
+     0.2862,
+     0.1287
+    ],
+    [
+     -0.7359,
+     -0.2676,
+     -0.0843
+    ]
+   ],
+   "complete_train_rows": 6873
+  },
+  "imb": {
+   "var_explained": [
+    0.1571,
+    0.1509,
+    0.1454,
+    0.144
+   ],
+   "loadings": [
+    [
+     0.2642,
+     -0.0158,
+     0.814,
+     -0.211
+    ],
+    [
+     -0.6375,
+     0.0516,
+     0.1015,
+     0.5284
+    ],
+    [
+     -0.4706,
+     -0.141,
+     -0.0421,
+     -0.4481
+    ],
+    [
+     -0.4934,
+     -0.3175,
+     0.2371,
+     -0.403
+    ],
+    [
+     -0.0849,
+     0.0835,
+     -0.2467,
+     0.0189
+    ],
+    [
+     -0.2272,
+     0.7779,
+     0.3322,
+     0.0788
+    ],
+    [
+     -0.0042,
+     0.5141,
+     -0.3129,
+     -0.5536
+    ]
+   ],
+   "complete_train_rows": 6873
+  }
+ },
+ "phi_state_persistence": {
+  "per_asset_LOO": {
+   "AMP-USD": [
+    0.0804,
+    -0.1403
+   ],
+   "XPL-USD": [
+    0.0524,
+    -0.1387
+   ],
+   "KITE-USD": [
+    0.0839,
+    -0.1415
+   ],
+   "2Z-USD": [
+    0.0714,
+    -0.1405
+   ],
+   "MOG-USD": [
+    0.0812,
+    -0.1439
+   ],
+   "VET-USD": [
+    0.0754,
+    -0.1398
+   ],
+   "XYO-USD": [
+    0.0804,
+    -0.0724
+   ]
+  },
+  "note": "phi from OLS F(t+1) on F(t), train segment, LOO scores",
+  "median_phi": -0.01
+ },
+ "horse_race_R2h": {
+  "AMP-USD": {
+   "30s": {
+    "AR": -0.02293,
+    "FO": 0.00275,
+    "AF": 0.00975,
+    "SHUF": 0.00534,
+    "TSHIFT": 0.00497,
+    "n_test": 2717
+   },
+   "60s": {
+    "AR": -0.02319,
+    "FO": 0.00261,
+    "AF": -0.03204,
+    "SHUF": -0.04218,
+    "TSHIFT": -0.0391,
+    "n_test": 2717
+   },
+   "120s": {
+    "AR": -0.02425,
+    "FO": -0.00119,
+    "AF": -0.0271,
+    "SHUF": -0.03351,
+    "TSHIFT": -0.03194,
+    "n_test": 2717
+   },
+   "300s": {
+    "AR": -0.024,
+    "FO": -0.00098,
+    "AF": -0.0269,
+    "SHUF": -0.02788,
+    "TSHIFT": -0.02645,
+    "n_test": 2717
+   }
+  },
+  "XPL-USD": {
+   "30s": {
+    "AR": 0.00601,
+    "FO": 0.0045,
+    "AF": 0.0084,
+    "SHUF": 0.00623,
+    "TSHIFT": 0.00657,
+    "n_test": 2717
+   },
+   "60s": {
+    "AR": 0.00597,
+    "FO": -9e-05,
+    "AF": 0.0058,
+    "SHUF": 0.00558,
+    "TSHIFT": 0.00583,
+    "n_test": 2717
+   },
+   "120s": {
+    "AR": 0.00586,
+    "FO": 0.00011,
+    "AF": 0.00609,
+    "SHUF": 0.00592,
+    "TSHIFT": 0.00612,
+    "n_test": 2717
+   },
+   "300s": {
+    "AR": 0.00592,
+    "FO": -0.00063,
+    "AF": 0.00532,
+    "SHUF": 0.00607,
+    "TSHIFT": 0.0059,
+    "n_test": 2717
+   }
+  },
+  "KITE-USD": {
+   "30s": {
+    "AR": 0.00075,
+    "FO": 0.00991,
+    "AF": 0.00767,
+    "SHUF": -0.02181,
+    "TSHIFT": -0.01758,
+    "n_test": 2717
+   },
+   "60s": {
+    "AR": 0.00074,
+    "FO": -0.00313,
+    "AF": -0.00397,
+    "SHUF": -0.00378,
+    "TSHIFT": -0.00175,
+    "n_test": 2717
+   },
+   "120s": {
+    "AR": 0.00077,
+    "FO": 0.00063,
+    "AF": 0.00077,
+    "SHUF": 0.00035,
+    "TSHIFT": 0.00059,
+    "n_test": 2717
+   },
+   "300s": {
+    "AR": 0.00075,
+    "FO": 2e-05,
+    "AF": 0.00063,
+    "SHUF": -4e-05,
+    "TSHIFT": -0.00087,
+    "n_test": 2717
+   }
+  },
+  "2Z-USD": {
+   "30s": {
+    "AR": 0.00184,
+    "FO": 0.00141,
+    "AF": 0.00547,
+    "SHUF": 0.00247,
+    "TSHIFT": 0.00287,
+    "n_test": 2717
+   },
+   "60s": {
+    "AR": 0.0019,
+    "FO": 2e-05,
+    "AF": 0.00148,
+    "SHUF": 0.00061,
+    "TSHIFT": 0.00108,
+    "n_test": 2717
+   },
+   "120s": {
+    "AR": 0.00187,
+    "FO": 0.00029,
+    "AF": 0.00044,
+    "SHUF": 0.00057,
+    "TSHIFT": -0.00113,
+    "n_test": 2717
+   },
+   "300s": {
+    "AR": 0.00183,
+    "FO": -3e-05,
+    "AF": 0.00215,
+    "SHUF": 0.00219,
+    "TSHIFT": 0.0021,
+    "n_test": 2717
+   }
+  },
+  "MOG-USD": {
+   "30s": {
+    "AR": 0.02263,
+    "FO": -0.0034,
+    "AF": 0.01689,
+    "SHUF": 0.01852,
+    "TSHIFT": 0.0158,
+    "n_test": 2717
+   },
+   "60s": {
+    "AR": 0.02263,
+    "FO": -0.00217,
+    "AF": 0.01951,
+    "SHUF": 0.02446,
+    "TSHIFT": 0.01956,
+    "n_test": 2717
+   },
+   "120s": {
+    "AR": 0.02263,
+    "FO": -2e-05,
+    "AF": 0.01585,
+    "SHUF": 0.01511,
+    "TSHIFT": 0.01547,
+    "n_test": 2717
+   },
+   "300s": {
+    "AR": 0.02299,
+    "FO": 0.00292,
+    "AF": 0.02742,
+    "SHUF": 0.02306,
+    "TSHIFT": 0.02312,
+    "n_test": 2717
+   }
+  },
+  "VET-USD": {
+   "30s": {
+    "AR": 0.00326,
+    "FO": 0.00457,
+    "AF": 0.00975,
+    "SHUF": 0.00323,
+    "TSHIFT": 0.00276,
+    "n_test": 2717
+   },
+   "60s": {
+    "AR": 0.00325,
+    "FO": -0.00083,
+    "AF": 0.00328,
+    "SHUF": 0.00378,
+    "TSHIFT": 0.00106,
+    "n_test": 2717
+   },
+   "120s": {
+    "AR": 0.00326,
+    "FO": 0.00072,
+    "AF": 0.0046,
+    "SHUF": 0.0037,
+    "TSHIFT": 0.00214,
+    "n_test": 2717
+   },
+   "300s": {
+    "AR": 0.00325,
+    "FO": -0.00077,
+    "AF": -0.00015,
+    "SHUF": 0.00058,
+    "TSHIFT": 0.00405,
+    "n_test": 2717
+   }
+  },
+  "XYO-USD": {
+   "30s": {
+    "AR": 0.0438,
+    "FO": 3e-05,
+    "AF": 0.04427,
+    "SHUF": 0.0427,
+    "TSHIFT": 0.04257,
+    "n_test": 2717
+   },
+   "60s": {
+    "AR": 0.0438,
+    "FO": -0.00494,
+    "AF": 0.04067,
+    "SHUF": 0.04457,
+    "TSHIFT": 0.0408,
+    "n_test": 2717
+   },
+   "120s": {
+    "AR": 0.04381,
+    "FO": -0.00056,
+    "AF": 0.04428,
+    "SHUF": 0.0447,
+    "TSHIFT": 0.04417,
+    "n_test": 2717
+   },
+   "300s": {
+    "AR": 0.04379,
+    "FO": -5e-05,
+    "AF": 0.04453,
+    "SHUF": 0.04444,
+    "TSHIFT": 0.04393,
+    "n_test": 2717
+   }
+  }
+ },
+ "horse_race_pooled": {
+  "30s": {
+   "AR": 0.00791,
+   "FO": 0.00282,
+   "AF": 0.0146,
+   "SHUF": 0.0081,
+   "TSHIFT": 0.00828
+  },
+  "60s": {
+   "AR": 0.00787,
+   "FO": -0.00122,
+   "AF": 0.00496,
+   "SHUF": 0.00472,
+   "TSHIFT": 0.00393
+  },
+  "120s": {
+   "AR": 0.00771,
+   "FO": -0.0,
+   "AF": 0.00642,
+   "SHUF": 0.00526,
+   "TSHIFT": 0.00506
+  },
+  "300s": {
+   "AR": 0.00779,
+   "FO": 7e-05,
+   "AF": 0.00757,
+   "SHUF": 0.00692,
+   "TSHIFT": 0.0074
+  }
+ },
+ "cross_panel": {
+  "F1_correlations": {
+   "ret_vs_spr": {
+    "corr_F1": -0.0068,
+    "n": 9548
+   },
+   "imb_vs_ret": {
+    "corr_F1": -0.1707,
+    "n": 9548
+   },
+   "imb_vs_spr": {
+    "corr_F1": 0.0744,
+    "n": 9548
+   }
+  },
+  "lag_offsets": {
+   "imb_leads_ret": {
+    "best_lag_bars": 0,
+    "best_lag_s": 0,
+    "xcorr": -0.1707
+   },
+   "spr_leads_ret": {
+    "best_lag_bars": -16,
+    "best_lag_s": -480,
+    "xcorr": -0.0321
+   }
+  },
+  "note": "positive best_lag means second panel lags first (first leads)"
+ },
+ "blind_leaders": {
+  "spearman_rho_beta_vs_leadership": -0.0714,
+  "beta_F1_ranking": [
+   "MOG-USD",
+   "XYO-USD",
+   "2Z-USD",
+   "KITE-USD",
+   "AMP-USD",
+   "XPL-USD",
+   "VET-USD"
+  ],
+  "leadership_ranking": [
+   "XYO-USD",
+   "XPL-USD",
+   "AMP-USD",
+   "2Z-USD",
+   "KITE-USD",
+   "VET-USD",
+   "MOG-USD"
+  ],
+  "note": "ws_leaders.json read ONLY at this final step"
+ },
+ "factor_decomposition_FO_30s": {
+  "note": "factor-only OOS R2 at 30s, F1 vs F2 separately (LOO scores, frozen train params)",
+  "F1_only": {
+   "AMP-USD": 0.00314,
+   "XPL-USD": 0.00454,
+   "KITE-USD": 0.01218,
+   "2Z-USD": 0.00142,
+   "MOG-USD": -9e-05,
+   "VET-USD": 0.0046,
+   "XYO-USD": 2e-05
+  },
+  "F2_only": {
+   "AMP-USD": -0.00043,
+   "XPL-USD": -8e-05,
+   "KITE-USD": -0.00244,
+   "2Z-USD": -4e-05,
+   "MOG-USD": -0.00338,
+   "VET-USD": -1e-05,
+   "XYO-USD": 0.0
+  },
+  "phi_fullsample": {
+   "F1": 0.0812,
+   "F2": -0.1403
+  },
+  "conclusion": "30s predictive effect is F1-driven (cluster members all positive); F2 contributes nothing. AMP AF-model jump is not F1-driven (F1-only FO for AMP is 0.003); single-asset, non-cluster-coherent, ~1.2 SE \u2014 uninterpretable noise."
+ },
+ "reporting_frame": "Three separate observations per Mike: (1) persistence phi, (2) R2(h) decay shape, (3) cross-observable propagation mechanism. Caveat: smooth R2(h) alone would not establish a causal state (autocorrelated omitted process can produce it); cross-observable timing is the discriminator. Deliverable framed as decomposition, not binary verdict."
+}
