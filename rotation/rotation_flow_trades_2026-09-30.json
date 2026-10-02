@@ -1,0 +1,112 @@
+{
+ "ran_utc": "2026-10-01T01:03:05.582286+00:00",
+ "coins": [
+  "2Z-USD",
+  "AMP-USD",
+  "KITE-USD",
+  "MOG-USD",
+  "VET-USD",
+  "XPL-USD",
+  "XYO-USD"
+ ],
+ "bar_s": 30,
+ "n_bars": 4262,
+ "null_buy_leads_buy": 0.4720443758876918,
+ "null_sell_leads_buy": 0.13440343694242635,
+ "lead_pairs": [],
+ "n_lead_pairs": 0,
+ "event_flows": [
+  {
+   "sell_coin": "2Z-USD",
+   "buy_coin": "XPL-USD",
+   "window_min": 10,
+   "excess_notional": 3785.502863378915,
+   "events": 43
+  },
+  {
+   "sell_coin": "2Z-USD",
+   "buy_coin": "XPL-USD",
+   "window_min": 5,
+   "excess_notional": 3202.395850294108,
+   "events": 43
+  },
+  {
+   "sell_coin": "2Z-USD",
+   "buy_coin": "VET-USD",
+   "window_min": 2,
+   "excess_notional": -1717.3148821930974,
+   "events": 43
+  },
+  {
+   "sell_coin": "2Z-USD",
+   "buy_coin": "XPL-USD",
+   "window_min": 2,
+   "excess_notional": 1588.1539215129924,
+   "events": 43
+  },
+  {
+   "sell_coin": "XYO-USD",
+   "buy_coin": "KITE-USD",
+   "window_min": 10,
+   "excess_notional": -1543.1731188545616,
+   "events": 43
+  },
+  {
+   "sell_coin": "XYO-USD",
+   "buy_coin": "KITE-USD",
+   "window_min": 5,
+   "excess_notional": -857.7781873342574,
+   "events": 43
+  },
+  {
+   "sell_coin": "MOG-USD",
+   "buy_coin": "KITE-USD",
+   "window_min": 10,
+   "excess_notional": -752.1700955987473,
+   "events": 43
+  },
+  {
+   "sell_coin": "MOG-USD",
+   "buy_coin": "KITE-USD",
+   "window_min": 1,
+   "excess_notional": 678.1080369517533,
+   "events": 43
+  },
+  {
+   "sell_coin": "MOG-USD",
+   "buy_coin": "AMP-USD",
+   "window_min": 5,
+   "excess_notional": -420.81035609442,
+   "events": 43
+  },
+  {
+   "sell_coin": "KITE-USD",
+   "buy_coin": "2Z-USD",
+   "window_min": 10,
+   "excess_notional": -394.42368448048217,
+   "events": 43
+  },
+  {
+   "sell_coin": "KITE-USD",
+   "buy_coin": "2Z-USD",
+   "window_min": 2,
+   "excess_notional": -256.8776206170267,
+   "events": 43
+  },
+  {
+   "sell_coin": "KITE-USD",
+   "buy_coin": "2Z-USD",
+   "window_min": 1,
+   "excess_notional": -245.7863684480482,
+   "events": 43
+  },
+  {
+   "sell_coin": "2Z-USD",
+   "buy_coin": "KITE-USD",
+   "window_min": 1,
+   "excess_notional": -236.26359095522358,
+   "events": 43
+  }
+ ],
+ "n_event_flows": 13
+}
