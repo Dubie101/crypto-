@@ -1,0 +1,86 @@
+{
+ "ran_utc": "2026-10-01T00:58:25.656789+00:00",
+ "n_assets": 317,
+ "n_obs": 745,
+ "grid_sec": 300,
+ "mean_contemporaneous_corr": 0.1232357366192439,
+ "leadlag_null_threshold": 0.4966913270754725,
+ "n_lead_pairs": 5,
+ "top_lead_pairs": [
+  {
+   "leader": "ZORA-USD",
+   "follower": "IOTX-USD",
+   "corr": 0.5256169171341003,
+   "rev_corr": 0.0344597453030657,
+   "lag_5min": 1
+  },
+  {
+   "leader": "ZK-USD",
+   "follower": "IOTX-USD",
+   "corr": 0.5194807850064791,
+   "rev_corr": 0.08624557167857409,
+   "lag_5min": 1
+  },
+  {
+   "leader": "TIA-USD",
+   "follower": "IOTX-USD",
+   "corr": 0.5156969667903594,
+   "rev_corr": 0.04124502832416693,
+   "lag_5min": 1
+  },
+  {
+   "leader": "OP-USD",
+   "follower": "IOTX-USD",
+   "corr": 0.5058503661842515,
+   "rev_corr": 0.08082085149291597,
+   "lag_5min": 1
+  },
+  {
+   "leader": "TRUMP-USD",
+   "follower": "IOTX-USD",
+   "corr": 0.49929107925336846,
+   "rev_corr": 0.07230210247949734,
+   "lag_5min": 1
+  }
+ ],
+ "drop_events": 18325,
+ "flow_null_bps": 625.6597085398033,
+ "n_sig_flows": 5,
+ "top_flows": [
+  {
+   "drop": "BTC-USD",
+   "into": "ALEO-USD",
+   "window_min": 30,
+   "excess_bps": 1025.82631503735,
+   "events": 6
+  },
+  {
+   "drop": "BNB-USD",
+   "into": "ALEO-USD",
+   "window_min": 30,
+   "excess_bps": 1002.9105094568711,
+   "events": 6
+  },
+  {
+   "drop": "BNB-USD",
+   "into": "HOPR-USD",
+   "window_min": 30,
+   "excess_bps": 705.9782411736206,
+   "events": 6
+  },
+  {
+   "drop": "BNB-USD",
+   "into": "PLU-USD",
+   "window_min": 30,
+   "excess_bps": 662.9533758494146,
+   "events": 6
+  },
+  {
+   "drop": "ETH-USD",
+   "into": "HOPR-USD",
+   "window_min": 30,
+   "excess_bps": 640.7126700317184,
+   "events": 12
+  }
+ ]
+}
