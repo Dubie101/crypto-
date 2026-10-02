@@ -1,0 +1,15 @@
+{
+ "ran_utc": "2026-10-01T02:03:31.283286+00:00",
+ "size_usd": 400.0,
+ "tol": 0.25,
+ "pairs": [],
+ "sell_events": {
+  "2Z-USD": 33,
+  "AMP-USD": 146,
+  "KITE-USD": 53,
+  "MOG-USD": 33,
+  "VET-USD": 173,
+  "XPL-USD": 351,
+  "XYO-USD": 38
+ }
+}
