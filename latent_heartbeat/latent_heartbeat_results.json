@@ -1,0 +1,554 @@
+{
+ "design_notes": [],
+ "version": 3,
+ "leakage_note": "v2 used full-sample factor scores in response/race; 2Z OOS R2=0.23 was self-contamination (LOO lag -1 made F2(t) contemporaneous, and F2 loads 0.35 on 2Z). v3 uses strictly leave-one-out factor scores throughout. No asset predicts itself.",
+ "coverage": {
+  "rows": 283001,
+  "first": "2026-09-29T13:32:52+00:00",
+  "last": "2026-10-02T21:28:23+00:00",
+  "span_s": 287731.0,
+  "missing_seconds": 4731,
+  "missing_pct": 1.644,
+  "n_gaps_over_120s": 18,
+  "gaps": [
+   {
+    "from": "2026-09-29T17:21:32+00:00",
+    "to": "2026-09-29T17:23:47+00:00",
+    "gap_s": 135.0
+   },
+   {
+    "from": "2026-09-29T20:26:22+00:00",
+    "to": "2026-09-29T20:28:42+00:00",
+    "gap_s": 140.0
+   },
+   {
+    "from": "2026-09-29T23:40:21+00:00",
+    "to": "2026-09-29T23:43:40+00:00",
+    "gap_s": 199.0
+   },
+   {
+    "from": "2026-09-30T16:56:04+00:00",
+    "to": "2026-09-30T16:58:47+00:00",
+    "gap_s": 163.0
+   },
+   {
+    "from": "2026-09-30T19:20:03+00:00",
+    "to": "2026-09-30T19:23:43+00:00",
+    "gap_s": 220.0
+   },
+   {
+    "from": "2026-09-30T22:31:38+00:00",
+    "to": "2026-09-30T22:33:41+00:00",
+    "gap_s": 123.0
+   },
+   {
+    "from": "2026-10-01T01:41:13+00:00",
+    "to": "2026-10-01T01:43:52+00:00",
+    "gap_s": 159.0
+   },
+   {
+    "from": "2026-10-01T04:39:33+00:00",
+    "to": "2026-10-01T04:43:44+00:00",
+    "gap_s": 251.0
+   },
+   {
+    "from": "2026-10-01T07:18:06+00:00",
+    "to": "2026-10-01T07:21:21+00:00",
+    "gap_s": 195.0
+   },
+   {
+    "from": "2026-10-01T10:00:43+00:00",
+    "to": "2026-10-01T10:03:42+00:00",
+    "gap_s": 179.0
+   },
+   {
+    "from": "2026-10-01T14:43:47+00:00",
+    "to": "2026-10-01T14:48:46+00:00",
+    "gap_s": 299.0
+   },
+   {
+    "from": "2026-10-01T19:00:46+00:00",
+    "to": "2026-10-01T19:03:36+00:00",
+    "gap_s": 170.0
+   },
+   {
+    "from": "2026-10-01T19:41:16+00:00",
+    "to": "2026-10-01T19:43:36+00:00",
+    "gap_s": 140.0
+   },
+   {
+    "from": "2026-10-01T21:54:27+00:00",
+    "to": "2026-10-01T21:58:41+00:00",
+    "gap_s": 254.0
+   },
+   {
+    "from": "2026-10-02T03:21:21+00:00",
+    "to": "2026-10-02T03:23:35+00:00",
+    "gap_s": 134.0
+   },
+   {
+    "from": "2026-10-02T05:43:52+00:00",
+    "to": "2026-10-02T05:48:36+00:00",
+    "gap_s": 284.0
+   },
+   {
+    "from": "2026-10-02T09:43:45+00:00",
+    "to": "2026-10-02T09:48:36+00:00",
+    "gap_s": 291.0
+   },
+   {
+    "from": "2026-10-02T18:54:22+00:00",
+    "to": "2026-10-02T18:58:40+00:00",
+    "gap_s": 258.0
+   }
+  ],
+  "nulls_per_product": {
+   "AMP-USD": 99,
+   "XPL-USD": 39,
+   "KITE-USD": 44,
+   "2Z-USD": 63,
+   "MOG-USD": 1940,
+   "VET-USD": 103,
+   "XYO-USD": 718
+  },
+  "gap_policy": "forward-fill up to 60s; return=NaN if product gap>120s or at edges"
+ },
+ "step1_observable_screen": {
+  "mid_logret": {
+   "F1_var_explained": 0.1906,
+   "F2_var_explained": 0.146,
+   "complete_rows_train": 200050
+  },
+  "spread_bps_change": {
+   "F1_var_explained": 0.1528,
+   "F2_var_explained": 0.1475,
+   "complete_rows_train": 200050
+  },
+  "imb5_change": {
+   "F1_var_explained": 0.1448,
+   "F2_var_explained": 0.1439,
+   "complete_rows_train": 200050
+  }
+ },
+ "step1_best_observable": "mid_logret",
+ "step2_pca": {
+  "var_explained": [
+   0.1906,
+   0.146,
+   0.1428,
+   0.1424,
+   0.1354,
+   0.1331,
+   0.1097
+  ],
+  "cumulative": [
+   0.1906,
+   0.3366,
+   0.4794,
+   0.6217,
+   0.7572,
+   0.8903,
+   1.0
+  ],
+  "white_noise_baseline": 0.1429,
+  "k_kaiser": 2,
+  "n_complete_train": 200050
+ },
+ "step2_chosen_k": 2,
+ "step2_k_justification": "F1=0.1906 clearly above baseline 0.1429; F2=0.1460 marginal; F3..F7 at/below baseline. Kaiser -> k=2.",
+ "step2_loadings_F1": {
+  "AMP-USD": -0.0456,
+  "XPL-USD": -0.6104,
+  "KITE-USD": -0.3704,
+  "2Z-USD": -0.3392,
+  "MOG-USD": 0.0241,
+  "VET-USD": -0.6097,
+  "XYO-USD": -0.0277
+ },
+ "step2_loadings_F2": {
+  "AMP-USD": 0.3812,
+  "XPL-USD": -0.0621,
+  "KITE-USD": -0.2339,
+  "2Z-USD": 0.3489,
+  "MOG-USD": -0.8017,
+  "VET-USD": -0.0422,
+  "XYO-USD": -0.1729
+ },
+ "step2_F2_note": "F2 loads -0.80 on MOG-USD. MOG 1s mid is a stale step function: 45 snaps of 5-115% between discrete levels with ~zero trades (quote artifact, not price discovery). F2 is therefore a data-artifact factor, not a market state; heartbeat interpretation rests on F1 only.",
+ "step2_rolling_stability": {
+  "windows": 113,
+  "median_abs_cosine_F1": 0.9884,
+  "stable": true,
+  "kalman_decision": "SKIPPED: median |cos|=0.988>0.90 over 113 rolling 2h windows; static loadings suffice."
+ },
+ "step3_response_loo": {
+  "AMP-USD": {
+   "lags_loo": {
+    "F1": {
+     "lag_s": 0,
+     "xcorr": -0.0131
+    },
+    "F2": {
+     "lag_s": -2,
+     "xcorr": 0.0151
+    }
+   },
+   "alpha": -0.001174,
+   "betas": [
+    -0.006803,
+    -0.001554
+   ],
+   "R2_next1s_train": 7.4e-05
+  },
+  "XPL-USD": {
+   "lags_loo": {
+    "F1": {
+     "lag_s": 0,
+     "xcorr": -0.2287
+    },
+    "F2": {
+     "lag_s": 0,
+     "xcorr": -0.0305
+    }
+   },
+   "alpha": 0.000566,
+   "betas": [
+    -0.06715,
+    -0.016478
+   ],
+   "R2_next1s_train": 0.005401
+  },
+  "KITE-USD": {
+   "lags_loo": {
+    "F1": {
+     "lag_s": 0,
+     "xcorr": -0.1171
+    },
+    "F2": {
+     "lag_s": 0,
+     "xcorr": 0.0209
+    }
+   },
+   "alpha": 0.000148,
+   "betas": [
+    -0.077617,
+    0.006983
+   ],
+   "R2_next1s_train": 0.007837
+  },
+  "2Z-USD": {
+   "lags_loo": {
+    "F1": {
+     "lag_s": 0,
+     "xcorr": -0.105
+    },
+    "F2": {
+     "lag_s": -1,
+     "xcorr": 0.0234
+    }
+   },
+   "alpha": -0.000174,
+   "betas": [
+    -0.04616,
+    -0.022872
+   ],
+   "R2_next1s_train": 0.003191
+  },
+  "MOG-USD": {
+   "lags_loo": {
+    "F1": {
+     "lag_s": 90,
+     "xcorr": 0.0081
+    },
+    "F2": {
+     "lag_s": -47,
+     "xcorr": 0.0159
+    }
+   },
+   "alpha": 0.002877,
+   "betas": [
+    -0.003309,
+    -0.000106
+   ],
+   "R2_next1s_train": 3.6e-05
+  },
+  "VET-USD": {
+   "lags_loo": {
+    "F1": {
+     "lag_s": 0,
+     "xcorr": -0.2287
+    },
+    "F2": {
+     "lag_s": 0,
+     "xcorr": 0.0216
+    }
+   },
+   "alpha": 0.000432,
+   "betas": [
+    -0.079127,
+    0.009619
+   ],
+   "R2_next1s_train": 0.00721
+  },
+  "XYO-USD": {
+   "lags_loo": {
+    "F1": {
+     "lag_s": 0,
+     "xcorr": -0.008
+    },
+    "F2": {
+     "lag_s": 48,
+     "xcorr": 0.0177
+    }
+   },
+   "alpha": -0.000265,
+   "betas": [
+    -0.004389,
+    -0.002162
+   ],
+   "R2_next1s_train": 3e-05
+  }
+ },
+ "step3_note": "All lags, betas and factor scores are leave-one-out: asset i never appears in its own regressors.",
+ "step6_horse_race_1s": {
+  "per_asset": {
+   "AMP-USD": {
+    "n_test": 52360,
+    "mse_naive": 0.5146078635382846,
+    "AR_own_past": {
+     "MSE": 0.5117880934635564,
+     "R2_vs_naive": 0.005479453919223776
+    },
+    "factor_only": {
+     "MSE": 0.5145119615145987,
+     "R2_vs_naive": 0.000186359421378679
+    },
+    "AR_plus_factor": {
+     "MSE": 0.5112130983560521,
+     "R2_vs_naive": 0.006596800054494145
+    }
+   },
+   "XPL-USD": {
+    "n_test": 54156,
+    "mse_naive": 1.7482086857556658,
+    "AR_own_past": {
+     "MSE": 1.7474539553957256,
+     "R2_vs_naive": 0.0004317163998153184
+    },
+    "factor_only": {
+     "MSE": 1.7414536896756854,
+     "R2_vs_naive": 0.0038639529336628176
+    },
+    "AR_plus_factor": {
+     "MSE": 1.7429218687349304,
+     "R2_vs_naive": 0.003024133825562214
+    }
+   },
+   "KITE-USD": {
+    "n_test": 54156,
+    "mse_naive": 0.7474542379714668,
+    "AR_own_past": {
+     "MSE": 0.7435718061090506,
+     "R2_vs_naive": 0.005194206769036258
+    },
+    "factor_only": {
+     "MSE": 0.7436988457684148,
+     "R2_vs_naive": 0.005024243642318238
+    },
+    "AR_plus_factor": {
+     "MSE": 0.7440808021847073,
+     "R2_vs_naive": 0.004513233874912204
+    }
+   },
+   "2Z-USD": {
+    "n_test": 54154,
+    "mse_naive": 1.6648012930745808,
+    "AR_own_past": {
+     "MSE": 1.6845057380611361,
+     "R2_vs_naive": -0.01183591403281814
+    },
+    "factor_only": {
+     "MSE": 1.662689756282667,
+     "R2_vs_naive": 0.0012683416337418985
+    },
+    "AR_plus_factor": {
+     "MSE": 1.6589186449041695,
+     "R2_vs_naive": 0.003533543729742683
+    }
+   },
+   "MOG-USD": {
+    "n_test": 50283,
+    "mse_naive": 0.30633816403476627,
+    "AR_own_past": {
+     "MSE": 0.3063316197398914,
+     "R2_vs_naive": 2.13629760936751e-05
+    },
+    "factor_only": {
+     "MSE": 0.3063861880997282,
+     "R2_vs_naive": -0.0001567681425302947
+    },
+    "AR_plus_factor": {
+     "MSE": 0.3063387645147958,
+     "R2_vs_naive": -1.9601868133101163e-06
+    }
+   },
+   "VET-USD": {
+    "n_test": 54155,
+    "mse_naive": 0.9321890813652979,
+    "AR_own_past": {
+     "MSE": 0.9316539620435799,
+     "R2_vs_naive": 0.0005740459016472244
+    },
+    "factor_only": {
+     "MSE": 0.9241982768434025,
+     "R2_vs_naive": 0.008572085515303307
+    },
+    "AR_plus_factor": {
+     "MSE": 0.9261007696488607,
+     "R2_vs_naive": 0.0065311982709775895
+    }
+   },
+   "XYO-USD": {
+    "n_test": 52270,
+    "mse_naive": 1.5543076268534537,
+    "AR_own_past": {
+     "MSE": 1.5395048432247014,
+     "R2_vs_naive": 0.009523715494286766
+    },
+    "factor_only": {
+     "MSE": 1.5543189774631179,
+     "R2_vs_naive": -7.302678998621914e-06
+    },
+    "AR_plus_factor": {
+     "MSE": 1.5494363362872583,
+     "R2_vs_naive": 0.0031340582018868357
+    }
+   }
+  },
+  "pooled": {
+   "AR_own_past": {
+    "mean_R2_vs_naive": 0.0013412267753264112,
+    "assets_positive_R2": 6
+   },
+   "factor_only": {
+    "mean_R2_vs_naive": 0.0026787017606965747,
+    "assets_positive_R2": 5
+   },
+   "AR_plus_factor": {
+    "mean_R2_vs_naive": 0.00390442968153748,
+    "assets_positive_R2": 6
+   }
+  }
+ },
+ "supplementary": {
+  "ret_30s": {
+   "F1_var_explained": 0.3069,
+   "F2_var_explained": 0.148
+  },
+  "ret_60s": {
+   "F1_var_explained": 0.3174,
+   "F2_var_explained": 0.1521
+  },
+  "winsorized_pm1": {
+   "F1_var_explained": 0.1942,
+   "F2_var_explained": 0.1433,
+   "note": "z-scored returns clipped at +-1 sigma before PCA; tests whether F2 survives without MOG snaps"
+  },
+  "lags_30s_loo_F1": {
+   "AMP-USD": {
+    "lag_buckets": 0,
+    "lag_s": 0,
+    "xcorr": -0.057
+   },
+   "XPL-USD": {
+    "lag_buckets": 0,
+    "lag_s": 0,
+    "xcorr": -0.5931
+   },
+   "KITE-USD": {
+    "lag_buckets": 0,
+    "lag_s": 0,
+    "xcorr": -0.412
+   },
+   "2Z-USD": {
+    "lag_buckets": 0,
+    "lag_s": 0,
+    "xcorr": -0.4043
+   },
+   "MOG-USD": {
+    "lag_buckets": 0,
+    "lag_s": 0,
+    "xcorr": 0.0177
+   },
+   "VET-USD": {
+    "lag_buckets": 0,
+    "lag_s": 0,
+    "xcorr": -0.595
+   },
+   "XYO-USD": {
+    "lag_buckets": 1,
+    "lag_s": 30,
+    "xcorr": -0.0294
+   }
+  },
+  "lags_30s_note": "LOO F1 lag per asset on 30s-aggregated train returns, +-120s window. Negative lag = asset leads the rest-of-market factor."
+ },
+ "step4_leaders_board": {
+  "first_read_here": true,
+  "note": "ws_leaders.json was not opened during any fitting step; this is the first read.",
+  "observed_counts": {
+   "AMP-USD": 1480,
+   "XPL-USD": 1742,
+   "KITE-USD": 1051,
+   "2Z-USD": 1456,
+   "MOG-USD": 6,
+   "VET-USD": 656,
+   "XYO-USD": 1728
+  },
+  "top_pairs": {
+   "XPL-USD->2Z-USD": 814,
+   "XPL-USD->KITE-USD": 804,
+   "XPL-USD->VET-USD": 778,
+   "XYO-USD->XPL-USD": 749,
+   "XYO-USD->2Z-USD": 732,
+   "XYO-USD->VET-USD": 730,
+   "XYO-USD->KITE-USD": 712,
+   "XPL-USD->AMP-USD": 692,
+   "XYO-USD->AMP-USD": 682,
+   "2Z-USD->XPL-USD": 668,
+   "2Z-USD->KITE-USD": 656,
+   "2Z-USD->VET-USD": 640
+  },
+  "thresh_bps": 5.0,
+  "n_buckets": 9552
+ },
+ "step4_blind_test": {
+  "spearman_betaF1_vs_leadership": {
+   "rho": -0.0357,
+   "p": 0.9394
+  },
+  "spearman_xcorrF1_vs_leadership": {
+   "rho": 0.018,
+   "p": 0.9694
+  },
+  "betaF1_ranking": [
+   "VET-USD",
+   "KITE-USD",
+   "XPL-USD",
+   "2Z-USD",
+   "AMP-USD",
+   "XYO-USD",
+   "MOG-USD"
+  ],
+  "observed_ranking": [
+   "XPL-USD",
+   "XYO-USD",
+   "AMP-USD",
+   "2Z-USD",
+   "KITE-USD",
+   "VET-USD",
+   "MOG-USD"
+  ],
+  "verdict": "NOT REPRODUCED: rank correlation ~0; the 1s common factor does not recover the 30s-bucket leadership ordering (XYO/AMP lead there but carry no F1 loading at 1s). Leadership likely lives at coarser timescales or reflects discrete large-move dynamics, not continuous 1s co-movement."
+ }
+}
