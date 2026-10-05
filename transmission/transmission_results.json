@@ -1,0 +1,209 @@
+{
+ "meta": {
+  "assets": [
+   "XPL-USD",
+   "VET-USD",
+   "KITE-USD",
+   "2Z-USD"
+  ],
+  "event_threshold_bps_30s": 5.0,
+  "first_move_threshold_bps_5s": 3.0,
+  "window_s": 60,
+  "event_separation_s": 120,
+  "zero_lag_s": 2,
+  "n_events": 1545,
+  "grid_days": 5.759722222222222,
+  "null_reps": 40
+ },
+ "classification": {
+  "leader_first": 237,
+  "follower_first": 638,
+  "zero_lag": 81,
+  "indeterminate": 589,
+  "follower_first_by": [
+   237,
+   115,
+   137,
+   149
+  ]
+ },
+ "pairs": {
+  "XPL->VET": {
+   "n_AB": 693,
+   "n_BA": 331,
+   "n_zero": 409,
+   "asym": 0.3535,
+   "shift_m120_asym": 0.2735,
+   "shift_p120_asym": 0.2726,
+   "null_median_asym": 0.2328,
+   "null_p5": 0.1768,
+   "null_p95": 0.2936,
+   "null_pct_of_obs": 1.0,
+   "perm_pct_of_obs": 1.0,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "XPL->KIT": {
+   "n_AB": 663,
+   "n_BA": 483,
+   "n_zero": 348,
+   "asym": 0.1571,
+   "shift_m120_asym": 0.0782,
+   "shift_p120_asym": 0.1079,
+   "null_median_asym": 0.1199,
+   "null_p5": 0.0785,
+   "null_p95": 0.1513,
+   "null_pct_of_obs": 0.95,
+   "perm_pct_of_obs": 0.75,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "XPL->2Z-": {
+   "n_AB": 561,
+   "n_BA": 556,
+   "n_zero": 389,
+   "asym": 0.0045,
+   "shift_m120_asym": -0.0329,
+   "shift_p120_asym": -0.0116,
+   "null_median_asym": 0.0099,
+   "null_p5": -0.0295,
+   "null_p95": 0.0517,
+   "null_pct_of_obs": 0.425,
+   "perm_pct_of_obs": 0.5833,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "VET->XPL": {
+   "n_AB": 331,
+   "n_BA": 693,
+   "n_zero": 409,
+   "asym": -0.3535,
+   "shift_m120_asym": -0.3178,
+   "shift_p120_asym": -0.328,
+   "null_median_asym": -0.2328,
+   "null_p5": -0.2936,
+   "null_p95": -0.1768,
+   "null_pct_of_obs": 0.0,
+   "perm_pct_of_obs": 0.0833,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "VET->KIT": {
+   "n_AB": 506,
+   "n_BA": 652,
+   "n_zero": 272,
+   "asym": -0.1261,
+   "shift_m120_asym": -0.193,
+   "shift_p120_asym": -0.1499,
+   "null_median_asym": -0.1212,
+   "null_p5": -0.1639,
+   "null_p95": -0.0789,
+   "null_pct_of_obs": 0.45,
+   "perm_pct_of_obs": 0.4167,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "VET->2Z-": {
+   "n_AB": 403,
+   "n_BA": 746,
+   "n_zero": 292,
+   "asym": -0.2985,
+   "shift_m120_asym": -0.2555,
+   "shift_p120_asym": -0.2726,
+   "null_median_asym": -0.2211,
+   "null_p5": -0.2564,
+   "null_p95": -0.1756,
+   "null_pct_of_obs": 0.0,
+   "perm_pct_of_obs": 0.1667,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "KIT->XPL": {
+   "n_AB": 483,
+   "n_BA": 663,
+   "n_zero": 348,
+   "asym": -0.1571,
+   "shift_m120_asym": -0.1748,
+   "shift_p120_asym": -0.1458,
+   "null_median_asym": -0.1199,
+   "null_p5": -0.1513,
+   "null_p95": -0.0785,
+   "null_pct_of_obs": 0.05,
+   "perm_pct_of_obs": 0.3333,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "KIT->VET": {
+   "n_AB": 652,
+   "n_BA": 506,
+   "n_zero": 272,
+   "asym": 0.1261,
+   "shift_m120_asym": 0.0854,
+   "shift_p120_asym": 0.0947,
+   "null_median_asym": 0.1212,
+   "null_p5": 0.0789,
+   "null_p95": 0.1639,
+   "null_pct_of_obs": 0.55,
+   "perm_pct_of_obs": 0.6667,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "KIT->2Z-": {
+   "n_AB": 492,
+   "n_BA": 687,
+   "n_zero": 329,
+   "asym": -0.1654,
+   "shift_m120_asym": -0.198,
+   "shift_p120_asym": -0.1363,
+   "null_median_asym": -0.1019,
+   "null_p5": -0.1528,
+   "null_p95": -0.0669,
+   "null_pct_of_obs": 0.025,
+   "perm_pct_of_obs": 0.25,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "2Z-->XPL": {
+   "n_AB": 556,
+   "n_BA": 561,
+   "n_zero": 389,
+   "asym": -0.0045,
+   "shift_m120_asym": -0.0095,
+   "shift_p120_asym": 0.0025,
+   "null_median_asym": -0.0099,
+   "null_p5": -0.0517,
+   "null_p95": 0.0295,
+   "null_pct_of_obs": 0.575,
+   "perm_pct_of_obs": 0.5,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "2Z-->VET": {
+   "n_AB": 746,
+   "n_BA": 403,
+   "n_zero": 292,
+   "asym": 0.2985,
+   "shift_m120_asym": 0.2314,
+   "shift_p120_asym": 0.2616,
+   "null_median_asym": 0.2211,
+   "null_p5": 0.1756,
+   "null_p95": 0.2564,
+   "null_pct_of_obs": 1.0,
+   "perm_pct_of_obs": 0.9167,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  },
+  "2Z-->KIT": {
+   "n_AB": 687,
+   "n_BA": 492,
+   "n_zero": 329,
+   "asym": 0.1654,
+   "shift_m120_asym": 0.084,
+   "shift_p120_asym": 0.1082,
+   "null_median_asym": 0.1019,
+   "null_p5": 0.0669,
+   "null_p95": 0.1528,
+   "null_pct_of_obs": 0.975,
+   "perm_pct_of_obs": 0.8333,
+   "perm_note": "null = multiset of the 12 observed ordered-pair asyms (label permutation only renames pairs; max-over-pairs is invariant -> degenerate)"
+  }
+ },
+ "perm_control": {
+  "note": "max-over-pairs statistic is invariant under label permutation (degenerate as implemented); replaced by per-pair null = multiset of 12 ordered-pair asyms"
+ },
+ "leader_share": {
+  "XPL-USD": 428,
+  "2Z-USD": 560,
+  "KITE-USD": 413,
+  "VET-USD": 144
+ }
+}
